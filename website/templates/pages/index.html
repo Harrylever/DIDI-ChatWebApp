@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+<!-- Window title -->
+{% block title %}
+    <title>Home</title>
+{% endblock %}
+
+
+<!-- Content -->
+{% block content %}
+
+    <main class="main_section">
+        <div class="main_section_sub">
+            <div class="row mx-2">
+                <div class="col-md-7 col-sm-10 chat_messages">
+                    <div class="messages_container">
+                        <div class="messages_display" id="messages_display">
+                            {% if msg %}
+                                {% for message in msg %}
+                                    <p>{{ message }}</p>
+                                {% endfor %}
+                            {% else %}
+                                <p></p>
+                            {% endif %}
+                        </div>
+                        <form method="post">
+                        <div class="message_input_container row">
+                                <div class="col-md-3 mt-3 mb-1">
+                                    <input type="text" name="username" value="{{ usr }}" id="username" class="form-control" disabled>
+                                </div>
+                                <div class="col-md-6 mt-3 mb-2">
+                                    <input type="text" name="message" id="message" class="form-control" required>
+                                </div>
+                                <div class="col-md-1 mt-3 text-end">
+                                    <button class="btn btn-outline-primary" id="sendBtn" type="button">Send</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-3 ms-auto log_messages">
+                    <div class="log_messages_header">
+                        <h4>Active Users:</h4>
+                    </div>
+                    <div class="log_messages_active_users">
+                        <ul>
+                            <div class="col-xxl-4 themed-grid-col">{{ usr }}</div>
+                        </ul>
+                    </div>
+                    <div class="some_text">
+                        An Online Web Chatting Application. Personal Or Group Chat Room for You and Your Friends
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+        
+        
+
+{% endblock %}

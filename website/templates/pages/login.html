@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+<!-- Window title -->
+{% block title %}
+    <title>Login</title>
+{% endblock %}
+
+
+<!-- Content -->
+{% block content %}
+
+    <main class="main_section" style="overflow-x: hidden;">
+        <div class="row">
+            <div class="col-md-4 me-auto ms-auto login_container">
+                <form method="post">
+                    <div class="form-group login_input_container">
+                        <label for="username">Enter your Username:</label>
+                        <input type="text" name="username" id="username" class="form-control mt-1 mb-3" required>
+                    </div>
+                    <div class`="ms-3">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>            
+        </div>
+    </main>
+
+
+
+{% endblock %}
